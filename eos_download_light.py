@@ -215,7 +215,7 @@ def check_arguments(
             or img == ("source")
             or img == ("")
         ):
-            test = re.compile("^[0-9]\\.[0-9][0-9]\\.[0-9]\\.*[0-9]*[F|M]$")
+            test = re.compile("^[0-9]{1,}\\.[0-9]{1,}\\.[0-9]{1,}(\\.[0-9]{1,})*[F|M]$")
             eos_valid = test.match(image)
             if image == "latest":
                 eos_valid = True
