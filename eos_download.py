@@ -223,7 +223,7 @@ def check_arguments(api, file_list, img, cvp, rootpw, cvp_user, cvp_passwd, eve,
       elif image == 'alertbase':
          return True
       elif img == ('INT') or img == ('64') or img == ('2GB') or img == ('2GB-INT') or img == ('vEOS') or img == ('vEOS-lab') or img == ('vEOS-lab-swi') or img == ('vEOS64-lab') or img == ('cEOS') or img == ('cEOS64') or img == ('RN') or img == ('source') or img == (''):
-         test = re.compile('^[0-9]\\.[0-9][0-9]\\.[0-9]\\.*[0-9]*[F|M]$')
+         test = re.compile('^[0-9]{1,}\\.[0-9]{1,}\\.[0-9]{1,}(\\.[0-9]{1,})*[F|M]$')
          eos_valid = test.match(image)
          if image == 'latest':
             eos_valid = True
